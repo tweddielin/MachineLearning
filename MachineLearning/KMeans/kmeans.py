@@ -32,10 +32,10 @@ class KMeans(object):
         self.distortion = []
 
     def fit(self,x_train):
-        if isinstance(self.init_method, basestring) and self.init_method == 'random':
+        if isinstance(self.init_method, str) and self.init_method == 'random':
             self.centroids = random_centroids(x_train, self.n_clusters)
 
-        if isinstance(self.init_method, basestring) and self.init_method == 'kmeans++':
+        if isinstance(self.init_method, str) and self.init_method == 'kmeans++':
             self.centroids = kmeans_plus2(x_train, self.n_clusters)
 
         while True:
